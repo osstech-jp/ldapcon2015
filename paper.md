@@ -28,6 +28,7 @@ We followed basically plain data structure but we made some enhancements to data
 In back-wt, making `Reverse DN` that reversed DN per RDN when adding entry.
 Then adding the `Reverse DN` as key into WiredTiger's B-Tree table.
 At this point, entries are sorted by `Reverse DN`, So we can rapid search with sub scope using WiredTiger's range search.
+The range search method is low cost that only needs `WT_CURSOR::search_near()` and increment cursor operations for this purpose.
 
 ![Making Reverse DN](figure/reverse_dn.eps)
 
@@ -35,7 +36,7 @@ At this point, entries are sorted by `Reverse DN`, So we can rapid search with s
 
 # Current Status
 
- * slapadd, slapcat, slapindex will works
+ * slapadd, slapcat, slapindex will works.
  * LDAP BIND, ADD, DELETE, SEARCH will works.
  * MODIFY, MODRDN does not implement yet.
  * deref search does not implement yet.
@@ -48,7 +49,7 @@ At this point, entries are sorted by `Reverse DN`, So we can rapid search with s
 
 # Benchmarking
 Here is benchmarking results that noticed concurrency performance.
-We use benchmarking tool called lb. See our wiki page for detail of benchmarks.[^benchmark_result]
+We use benchmarking tool called lb.[^lb] See our wiki page for detail of benchmarks.[^benchmark_result]
 
 ![LDAP ADD Benchmarking](benchmark/add.eps)
 
