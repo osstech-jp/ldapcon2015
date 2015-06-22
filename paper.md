@@ -25,8 +25,8 @@ If we choice a hierarchical structure, modrdn is fast but lookup and add operati
 
 We followed basically plain data structure but we implemented some improvements to data structure for perfomance.
 In back-wt, making `Reverse DN` that reversed DN per RDN when adding entry.
-Then adding the `Reverse DN` as key into WiredTiger B-Tree table.
-At this point, entries are sorted by 'Reverse DN', So we can rapid search with sub scope using wiredtiger's range search.
+Then adding the `Reverse DN` as key into WiredTiger's B-Tree table.
+At this point, entries are sorted by `Reverse DN`, So we can rapid search with sub scope using wiredtiger's range search.
 
 ![Making Reverse DN](figure/reverse_dn.eps)
 
