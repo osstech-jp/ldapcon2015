@@ -18,7 +18,7 @@ The WiredTiger backend will bring about high write performance and high concurre
 
 # Data Structure
 First, We had to choice data structure either plain structure such as back-bdb or hierarchical structure such as back-hdb.
-If we choice a plain structure, sub scope search are fast but modrdn and add operations need some cost.
+If we choice a plain structure, sub scope search is fast but modrdn and add operations need some cost.
 If we choice a hierarchical structure, modrdn is fast but lookup and add operations need some cost.
 
 ![Plain structure vs Hierarchical structure](figure/plain_vs_hierarchical.eps)
@@ -44,7 +44,8 @@ At this point, entries are sorted by 'Reverse DN', So we can rapid search with s
  It's not absolutely necessary due to WiredTiger cache is fast enough.
 
 # Benchmarking
-We use benchmarking tool called lb[^lb]
+Here is benchmarking results that noticed concurrency performance.
+We use benchmarking tool called lb. See our wiki page for detail of benchmarks.[^benchmark_result]
 
 ![LDAP ADD Benchmarking](benchmark/add.eps)
 
@@ -53,3 +54,4 @@ We use benchmarking tool called lb[^lb]
 ![LDAP SEARCH Benchmarking](benchmark/search.eps)
 
 [^lb]: <https://github.com/hamano/lb>
+[^benchmark_result]: <https://github.com/osstech-jp/openldap/wiki/back_wt-benchmark>
