@@ -40,7 +40,9 @@ At this point, entries are sorted by `Reverse DN`, So we can rapid search with s
  * MODIFY, MODRDN does not implement yet.
  * deref search does not implement yet.
  * WiredTiger does not support multiprocess access yet.
- It mean that we can't to do slapcat while running slapd. It will be supported in the future.
+ It mean that we can't to do slapcat while running slapd at the moment.
+ However, WiredTiger is planning to support RPC in the future.
+ If it is realized, We can do hot-backup while to avoid multi-process locking.
  * back-wt does not implement entry cache such as back-bdb.
  It's not absolutely necessary due to WiredTiger cache is fast enough.
 
