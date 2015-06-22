@@ -1,0 +1,54 @@
+\documentclass[a4paper
+$if(fontsize)$,$fontsize$$else$,12pt$endif$
+$if(twocolumn)$,twocolumn$else$,onecolumn$endif$
+]{article}
+
+%\usepackage{hamacro}
+%\usepackage[dvipdfmx]{color}
+%\usepackage[dvipdfmx]{xcolor}
+\usepackage[dvipdfm]{hyperref}
+\hypersetup{
+  setpagesize=false,
+  bookmarksnumbered=true,
+  colorlinks=true,
+}
+
+\hypersetup{
+  pdfstartview={FitV},
+  pdftitle={$title$},
+  pdfauthor={$company$ $author$},
+  pdfsubject={$subject$},
+  pdfkeywords={$keywords$},
+}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{here}
+
+% title
+\title{$title$}
+\author{$company$ \\ $author$}
+\date{$date$}
+
+\makeatletter
+\def\@maketitle{
+  \newpage
+  \null
+  \begin{center}
+    {\LARGE \@title \par}
+  \end{center}
+  \smallskip
+  \begin{flushright}
+    {\large \@author \par}
+    {\large \@date \par}
+  \end{flushright}
+  \vspace{0.5in}
+}
+\makeatother
+
+% document
+\begin{document}
+\maketitle
+\abstract{$abstract$}
+$body$
+
+\end{document}
