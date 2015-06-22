@@ -25,7 +25,7 @@ If we choice the hierarchical structure, modrdn is fast but lookup and add opera
 ![Plain structure vs Hierarchical structure](figure/plain_vs_hierarchical.eps)
 
 We followed basically plain data structure but we made some enhancements to data structure for perfomance.
-In back-wt, making `Reverse DN` that reversed DN per RDN when adding entry.
+In back-wt, making `Reverse DN` that reversed DN per RDN when adding an entry.
 Then adding the `Reverse DN` as key into WiredTiger's B-Tree table.
 At this point, entries are sorted by `Reverse DN`, So we can rapid search with sub scope using WiredTiger's range search.
 The range search method is low cost that only needs `WT_CURSOR::search_near()` and increment cursor operations for this purpose.
