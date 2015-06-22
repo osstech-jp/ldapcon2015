@@ -12,7 +12,7 @@ abstract:
 
 # Motivation
 BerkeleyDB is legacy embeded database.
-The Writing performance of back-bdb(OpenLDAP backend using BerkeleyDB) is painful slow and low scalability.
+The writing performance of back-bdb(OpenLDAP backend using BerkeleyDB) is painful slow and low scalability.
 If using asynchronous mode in order to improve the write performance, safety will be sacrificed.
 The WiredTiger backend will bring about high write performance and high concurrency performance for OpenLDAP.
 
