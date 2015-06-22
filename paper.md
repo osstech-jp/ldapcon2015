@@ -4,7 +4,7 @@ company: Open Source Solution Technology Corporation
 author: HAMANO Tsukasa \<hamano@osstech.co.jp\>
 date: \today
 abstract:
- This paper introduce WiredTiger Backend for OpenLDAP.
+ This paper introduce WiredTiger backend for OpenLDAP.
  WiredTiger is embeded database having the characteristics of multi-core scalability and lock-free algorithms.
  We implemented a new OpenLDAP backend that using WiredTiger database and then we made an experiment about performance.
 
@@ -19,7 +19,7 @@ The WiredTiger backend will bring about high write performance and high concurre
 # Data Structure
 First, We had to choice data structure either plain structure such as back-bdb or hierarchical structure such as back-hdb.
 If we choice the plain structure, sub scope search is fast but modrdn and add operations need some cost.
-The plain structure need many `@ prefix` entry for sub scope search, and also `% prefix` entries are needed.
+The plain structure need many `@prefix` entry for sub scope search, and also `%prefix` entries are needed.
 If we choice the hierarchical structure, modrdn is fast but lookup and add operations need some cost.
 
 ![Plain structure vs Hierarchical structure](figure/plain_vs_hierarchical.eps)
