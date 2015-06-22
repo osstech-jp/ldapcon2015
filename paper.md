@@ -18,15 +18,16 @@ The WiredTiger backend will bring about high write performance and high concurre
 
 # Data Structure
 First, We had to choice data structure either plain structure such as back-bdb or hierarchical structure such as back-hdb.
-If we choice a plain structure, sub scope search is fast but modrdn and add operations need some cost.
-If we choice a hierarchical structure, modrdn is fast but lookup and add operations need some cost.
+If we choice the plain structure, sub scope search is fast but modrdn and add operations need some cost.
+The plain structure need many `@ prefix` entry for sub scope search, and also `% prefix` entries are needed.
+If we choice the hierarchical structure, modrdn is fast but lookup and add operations need some cost.
 
 ![Plain structure vs Hierarchical structure](figure/plain_vs_hierarchical.eps)
 
 We followed basically plain data structure but we implemented some improvements to data structure for perfomance.
 In back-wt, making `Reverse DN` that reversed DN per RDN when adding entry.
 Then adding the `Reverse DN` as key into WiredTiger's B-Tree table.
-At this point, entries are sorted by `Reverse DN`, So we can rapid search with sub scope using wiredtiger's range search.
+At this point, entries are sorted by `Reverse DN`, So we can rapid search with sub scope using WiredTiger's range search.
 
 ![Making Reverse DN](figure/reverse_dn.eps)
 
