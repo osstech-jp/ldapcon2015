@@ -50,7 +50,7 @@ The range search method is low cost that only needs `WT_CURSOR::search_near()` a
 Here is benchmarking results that noticed concurrency performance.
 We use benchmarking tool called lb.[^lb] See our wiki page for detail of benchmarks.[^benchmark_result]
 
-![LDAP ADD Benchmarking](benchmark/add.eps)
+![LDAP ADD Benchmarking (This graph is not broken)](benchmark/add.eps)
 
 ![LDAP BIND Benchmarking](benchmark/bind.eps)
 
