@@ -15,7 +15,7 @@ $(TEX): $(SRC) template.tex
 	$(PANDOC) $(PANDOC_OPT) --template=template.tex -o $(TEX) $(SRC)
 
 $(DVI): $(TEX)
-	sed -i -e 's/includegraphics{/includegraphics[width=\\columnwidth]{/g' $^
+	sed -i -e 's/includegraphics{/includegraphics[width=0.9\\columnwidth]{/g' $^
 	sed -i -e 's/\[htbp\]/\[H\]/g' $^
 	$(LATEX) $(LATEX_OPT) $^
 	$(LATEX) $(LATEX_OPT) $^
