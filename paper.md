@@ -6,7 +6,7 @@ date: \today
 abstract:
  This paper introduces WiredTiger backend for OpenLDAP.
  WiredTiger is an embedded database having the characteristics of multi-core scalability and lock-free algorithms.
- We implemented a new OpenLDAP backend called back-wt that using WiredTiger database and then we measured the performance.
+ We implemented a new OpenLDAP backend called back-wt that is using WiredTiger database and then measured the performance.
 
 ---
 
@@ -37,14 +37,14 @@ The range search method is low cost that only needs `WT_CURSOR::search_near()` a
 
  * slapadd, slapcat, slapindex have been implemented.
  * LDAP BIND, ADD, DELETE and SEARCH have been implemented.
- * MODIFY and MODRDN have been not implement yet.
- * deref search has not implement yet.
+ * MODIFY and MODRDN have not been not implemented yet.
+ * deref search has not been implemented yet.
  * WiredTiger does not support multiprocess access yet.
  It means that we can't do slapcat while running slapd at the moment.
  However, WiredTiger is planning to support RPC in the future.
- If it is realized, We can do hot-backup while to avoid multi-process locking.
- * back-wt does not implement entry cache similar to back-bdb.
- It's not absolutely necessary sine WiredTiger cache is fast enough.
+ If it is realized, we can do hot-backup while avoiding multi-process locking.
+ * We do not implement entry cache similar to back-bdb.
+ It's not absolutely necessary since WiredTiger cache is fast enough.
 
 # Benchmarking
 We have measured benchmarks that focus on concurrency performance.
@@ -60,6 +60,6 @@ We use benchmarking tool called lb.[^lb] See our wiki page for detail of benchma
 [^benchmark_result]: <https://github.com/osstech-jp/openldap/wiki/back_wt-benchmark>
 
 ## Analysis
- * We used 12-Cores CPU (24-Hyper-Threading). We may get more scalability on more CPUs.
+ * We used 2x6-Core CPU(24-Hyper-Threading). We may get more scalability on more CPUs.
  * The ADD graph is not broken. back-wt is faster overwhelmingly.
- * The Read performance is same level. However, it is necessary to consider back-wt does not implement the entry cache.
+ * The read performance is same level. However, it is necessary to consider that we did not implement entry cache.
