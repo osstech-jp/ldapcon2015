@@ -25,3 +25,6 @@ $(PDF): $(DVI)
 
 clean:
 	rm -rf *.log *.aux *.out *.dvi
+
+archive:
+	git archive --format=zip --prefix=hamano-paper/ master > hamano-paper.zip
