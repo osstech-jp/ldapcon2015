@@ -60,9 +60,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="229.10909"
-     inkscape:cy="379.0206"
+     inkscape:zoom="2.8"
+     inkscape:cx="127.75504"
+     inkscape:cy="404.08294"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -103,48 +103,46 @@
      id="layer1"
      transform="translate(0,-609.44882)">
     <rect
-       style="opacity:0.98999999;fill:#cccccc;fill-opacity:1"
+       style="opacity:1;fill:#cccccc;fill-opacity:1"
        id="rect3190-2"
        width="364.96063"
        height="31.889742"
        x="0"
        y="698.03149" />
     <rect
-       style="opacity:0.98999999;fill:#cccccc;fill-opacity:1"
+       style="opacity:1;fill:#cccccc;fill-opacity:1"
        id="rect3190"
        width="364.96063"
        height="31.88978"
        x="-2.3622047e-07"
        y="609.44879" />
-    <text
-       xml:space="preserve"
-       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:'ヒラギノ丸ゴ Pro';-inkscape-font-specification:'ヒラギノ丸ゴ Pro Bold'"
-       x="7.0866141"
-       y="630.70868"
-       id="text2985"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2987"
-         x="7.0866141"
-         y="630.70868"
-         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:cmr10;-inkscape-font-specification:cmr10 Bold">cn=hamano,ou=Users,dc=example,dc=com</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:'ヒラギノ丸ゴ Pro';-inkscape-font-specification:'ヒラギノ丸ゴ Pro Bold'"
-       x="7.0866141"
-       y="719.29132"
-       id="text2985-1"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2987-8"
-         x="7.0866141"
-         y="719.29132"
-         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:cmr10;-inkscape-font-specification:cmr10 Bold">dc=com,dc=example,ou=users,cn=hamano</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1.18581736;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-mid:none;marker-end:url(#Arrow1Lend)"
        d="m 177.16535,644.8819 0,22.655 0,26.9513"
        id="path6526"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+       x="7.0866141"
+       y="630.70868"
+       id="text2995"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2997"
+         x="7.0866141"
+         y="630.70868">cn=hamano,ou=Users,dc=example,dc=com</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+       x="7.0866141"
+       y="719.29132"
+       id="text2995-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2997-5"
+         x="7.0866141"
+         y="719.29132">dc=com,dc=example,ou=users,cn=hamano,</tspan></text>
   </g>
 </svg>
