@@ -47,8 +47,10 @@ The range search method is low cost that only needs `WT_CURSOR::search_near()` a
  It's not absolutely necessary sine WiredTiger cache is fast enough.
 
 # Benchmarking
-Here is benchmarking results that noticed concurrency performance.
+We have measured benchmarks that focus on concurrency performance.
 We use benchmarking tool called lb.[^lb] See our wiki page for detail of benchmarks.[^benchmark_result]
+[^lb]: <https://github.com/hamano/lb>
+[^benchmark_result]: <https://github.com/osstech-jp/openldap/wiki/back_wt-benchmark>
 
 ![LDAP ADD Benchmarking (This graph is not broken)](benchmark/add.eps)
 
@@ -56,5 +58,5 @@ We use benchmarking tool called lb.[^lb] See our wiki page for detail of benchma
 
 ![LDAP SEARCH Benchmarking](benchmark/search.eps)
 
-[^lb]: <https://github.com/hamano/lb>
-[^benchmark_result]: <https://github.com/osstech-jp/openldap/wiki/back_wt-benchmark>
+## Analysis
+ * We used 24-core CPU.
