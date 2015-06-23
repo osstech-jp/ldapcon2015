@@ -62,4 +62,4 @@ We use benchmarking tool called lb.[^lb] See our wiki page for detail of benchma
 ## Analysis
  * We used 2x6-Core CPU(24-Hyper-Threading). We may get more scalability on more CPUs.
  * The ADD graph is not broken. back-wt is faster overwhelmingly.
- * The read performance is same level. However, it is necessary to consider that we did not implement entry cache.
+ * The read performance is same level. However, it is necessary to consider that we did not implement entry cache to back-wt.
