@@ -45,6 +45,7 @@ The range search method is low cost that only needs `WT_CURSOR::search_near()` a
  If it is realized, we can do hot-backup while avoiding multi-process locking.
  * We do not implement entry cache similar to back-bdb.
  It's not absolutely necessary since WiredTiger cache is fast enough.
+ * back-wt used B-Tree table. We will test LSM table in the future.
 
 # Benchmarking
 We have measured benchmarks that focus on concurrency performance.
