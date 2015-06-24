@@ -9,7 +9,7 @@ TEX=$(NAME).tex
 DVI=$(NAME).dvi
 PDF=$(NAME).pdf
 
-all: $(PDF)
+all: $(PDF) hamano-bio.pdf
 
 $(TEX): $(SRC) template.tex
 	$(PANDOC) $(PANDOC_OPT) --template=template.tex -o $(TEX) $(SRC)
@@ -23,8 +23,12 @@ $(DVI): $(TEX)
 $(PDF): $(DVI)
 	dvipdfmx -o $@ $^
 
+hamano-bio.pdf: hamano-bio.md
+	$(PANDOC) -o hamano-bio.pdf $^
+
 clean:
 	rm -rf *.log *.aux *.out *.dvi
 
 archive:
 	git archive --format=zip --prefix=hamano-paper/ master > hamano-paper.zip
+
