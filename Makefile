@@ -1,7 +1,7 @@
 LATEX=platex
 LATEX_OPT=-shell-escape
 PANDOC=pandoc
-PANDOC_OPT=-f markdown+yaml_metadata_block --toc -V fontsize=12 -V twocolumn
+PANDOC_OPT=-f markdown+yaml_metadata_block -V twocolumn
 
 NAME=paper
 SRC=$(NAME).md
