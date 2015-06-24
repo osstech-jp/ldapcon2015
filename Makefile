@@ -24,7 +24,7 @@ $(PDF): $(DVI)
 	dvipdfmx -o $@ $^
 
 hamano-bio.pdf: hamano-bio.md
-	$(PANDOC) -o hamano-bio.pdf $^
+	$(PANDOC) -o $@ $^
 
 clean:
 	rm -rf *.log *.aux *.out *.dvi
