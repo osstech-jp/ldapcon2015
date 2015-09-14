@@ -22,6 +22,10 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{here}
 
+% fix for pandoc 1.14
+\providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 % title
 \title{$title$}
 \author{$company$ \\ $author$}
