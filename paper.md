@@ -34,6 +34,7 @@ The range search method is low cost that only needs `WT_CURSOR::search_near()` a
 
 ![back-wt data structure](figure/back-wt_data_structure.eps)
 
+# Data Durability
 # Current Status
 
  * slapadd, slapcat, slapindex have been implemented.

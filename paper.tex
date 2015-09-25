@@ -1,7 +1,6 @@
-\documentclass[a4paper
-,twocolumn
-]{article}
+\documentclass[a4paper,twocolumn,11pt]{article}
 
+\usepackage{txfonts}
 \usepackage[dvipdfm]{hyperref}
 \hypersetup{
   setpagesize=false,
@@ -22,23 +21,34 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{here}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\includegraphics[height=20pt]{osstech_header.eps}}
+\chead{}
+\rhead{}
+
+% fix for pandoc 1.14
+\providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 % title
 \title{WiredTiger Backend for OpenLDAP}
-\author{Open Source Solution Technology Corporation \\ HAMANO Tsukasa \textless{}hamano@osstech.co.jp\textgreater{}}
-\date{\today}
+\author{HAMANO Tsukasa \textless{}hamano@osstech.co.jp\textgreater{}}
+\date{November 2015}
 
 \makeatletter
 \def\@maketitle{
   \newpage
-  \null
-  \begin{center}
-    {\LARGE \@title \par}
-  \end{center}
-  \smallskip
   \begin{flushright}
-    {\large \@author \par}
-    {\large \@date \par}
+    {\includegraphics[height=96pt]{logo.eps} \par}
   \end{flushright}
+  \begin{center}
+    {\huge \@title \par}
+    \bigskip
+    {\large Open Source Solution Technology Corporation \par}
+    {\large \@author \par}
+    {\large LDAPCon 2015 Edinburgh \@date \par}
+  \end{center}
   \vspace{0.5in}
 }
 \makeatother
@@ -46,11 +56,7 @@
 % document
 \begin{document}
 \maketitle
-\abstract{This paper introduces WiredTiger backend for OpenLDAP. WiredTiger is an
-embedded database having the characteristics of multi-core scalability
-and lock-free algorithms. We implemented a new OpenLDAP backend called
-back-wt that is using WiredTiger database and then measured the
-performance.}
+
 \section{Motivation}\label{motivation}
 
 BerkeleyDB is a legacy embedded database. The write performance of
@@ -98,18 +104,23 @@ this purpose.
 \caption{back-wt data structure}
 \end{figure}
 
+\section{Data Durability}\label{data-durability}
+
 \section{Current Status}\label{current-status}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   slapadd, slapcat, slapindex have been implemented.
 \item
-  LDAP BIND, ADD, DELETE and SEARCH have been implemented.
+  basic LDAP operations(BIND, ADD, DELETE, SEARCH, MODIFY, MODRDN) have
+  been implemented.
 \item
-  MODIFY and MODRDN have not been not implemented yet.
+  Password Modify Extended Operation(RFC 3062) works.
 \item
   deref search has not been implemented yet.
+\item
+  alias entry has not been implemented yet.
 \item
   WiredTiger does not support multiprocess access yet. It means that we
   can't do slapcat while running slapd at the moment. However,
@@ -130,7 +141,7 @@ See our wiki page for detail of benchmarks.\footnote{\url{https://github.com/oss
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\columnwidth]{benchmark/add.eps}
+\includegraphics[width=0.9\columnwidth]{benchmark/add_nosync.eps}
 \caption{LDAP ADD Benchmarking}
 \end{figure}
 
@@ -149,7 +160,7 @@ See our wiki page for detail of benchmarks.\footnote{\url{https://github.com/oss
 \subsection{Analysis}\label{analysis}
 
 \begin{itemize}
-\itemsep1pt\parskip0pt\parsep0pt
+\tightlist
 \item
   We used 2x6-Core CPU(24-Hyper-Threading). We may get more scalability
   on more CPUs.
@@ -157,7 +168,7 @@ See our wiki page for detail of benchmarks.\footnote{\url{https://github.com/oss
   The ADD graph is not broken. back-wt is faster overwhelmingly.
 \item
   The read performance is same level. However, it is necessary to
-  consider that we did not implement entry cache to back-wt.
+  consider that we did not implement entry cache for back-wt.
 \end{itemize}
 
 \end{document}
