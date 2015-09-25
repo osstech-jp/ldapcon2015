@@ -36,9 +36,10 @@ The range search method is low cost that only needs `WT_CURSOR::search_near()` a
 # Current Status
 
  * slapadd, slapcat, slapindex have been implemented.
- * LDAP BIND, ADD, DELETE and SEARCH have been implemented.
- * MODIFY and MODRDN have not been not implemented yet.
+ * basic LDAP operations(BIND, ADD, DELETE, SEARCH, MODIFY, MODRDN) have been implemented.
+ * Password Modify Extended Operation(RFC 3062) works.
  * deref search has not been implemented yet.
+ * alias entry has not been implemented yet.
  * WiredTiger does not support multiprocess access yet.
  It means that we can't do slapcat while running slapd at the moment.
  However, WiredTiger is planning to support RPC in the future.
@@ -63,4 +64,4 @@ We use benchmarking tool called lb.[^lb] See our wiki page for detail of benchma
 ## Analysis
  * We used 2x6-Core CPU(24-Hyper-Threading). We may get more scalability on more CPUs.
  * The ADD graph is not broken. back-wt is faster overwhelmingly.
- * The read performance is same level. However, it is necessary to consider that we did not implement entry cache to back-wt.
+ * The read performance is same level. However, it is necessary to consider that we did not implement entry cache for back-wt.
