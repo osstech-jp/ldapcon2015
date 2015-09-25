@@ -1,8 +1,9 @@
 ---
 title: WiredTiger Backend for OpenLDAP
-company: Open Source Solution Technology Corporation
+organization: Open Source Solution Technology Corporation
 author: HAMANO Tsukasa \<hamano@osstech.co.jp\>
-date: \today
+institute: LDAPCon 2015 Edinburgh
+date: November 2015
 abstract:
  This paper introduces WiredTiger backend for OpenLDAP.
  WiredTiger is an embedded database having the characteristics of multi-core scalability and lock-free algorithms.
@@ -52,7 +53,7 @@ The range search method is low cost that only needs `WT_CURSOR::search_near()` a
 We have measured benchmarks that focus on concurrency performance.
 We use benchmarking tool called lb.[^lb] See our wiki page for detail of benchmarks.[^benchmark_result]
 
-![LDAP ADD Benchmarking](benchmark/add.eps)
+![LDAP ADD Benchmarking](benchmark/add_nosync.eps)
 
 ![LDAP BIND Benchmarking](benchmark/bind.eps)
 

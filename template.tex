@@ -13,7 +13,7 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 \hypersetup{
   pdfstartview={FitV},
   pdftitle={$title$},
-  pdfauthor={$company$ $author$},
+  pdfauthor={$organization$ $author$},
   pdfsubject={$subject$},
   pdfkeywords={$keywords$},
 }
@@ -29,7 +29,7 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 
 % title
 \title{$title$}
-\author{$company$ \\ $author$}
+\author{$author$}
 \date{$date$}
 
 \makeatletter
@@ -37,11 +37,13 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
   \newpage
   \null
   \begin{center}
-    {\LARGE \@title \par}
+    {\huge \@title \par}
   \end{center}
   \smallskip
   \begin{flushright}
+    {\large $organization$ \par}
     {\large \@author \par}
+    {\large $institute$ }
     {\large \@date \par}
   \end{flushright}
   \vspace{0.5in}
