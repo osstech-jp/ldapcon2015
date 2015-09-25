@@ -1,6 +1,4 @@
-\documentclass[a4paper
-$if(twocolumn)$,twocolumn$else$,onecolumn$endif$
-]{article}
+\documentclass[a4paper$if(twocolumn)$,twocolumn$else$,onecolumn$endif$$if(fontsize)$,$fontsize$$endif$]{article}
 
 \usepackage{txfonts}
 \usepackage[dvipdfm]{hyperref}
@@ -23,6 +21,12 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{here}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\includegraphics[height=20pt]{osstech_header.eps}}
+\chead{}
+\rhead{}
+
 % fix for pandoc 1.14
 \providecommand{\tightlist}{%
       \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -35,17 +39,16 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 \makeatletter
 \def\@maketitle{
   \newpage
-  \null
+  \begin{flushright}
+    {\includegraphics[height=96pt]{logo.eps} \par}
+  \end{flushright}
   \begin{center}
     {\huge \@title \par}
-  \end{center}
-  \smallskip
-  \begin{flushright}
+    \bigskip
     {\large $organization$ \par}
     {\large \@author \par}
-    {\large $institute$ }
-    {\large \@date \par}
-  \end{flushright}
+    {\large $institute$ \@date \par}
+  \end{center}
   \vspace{0.5in}
 }
 \makeatother
@@ -53,7 +56,7 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 % document
 \begin{document}
 \maketitle
-\abstract{$abstract$}
+
 $body$
 
 \end{document}
