@@ -1,0 +1,3 @@
+
+all:
+	gnuplot gnuplot.plt
