@@ -1,9 +1,8 @@
 ---
 title: WiredTiger Backend for OpenLDAP
-organization: Open Source Solution Technology Corporation
+institute: Open Source Solution Technology Corporation
 author: HAMANO Tsukasa \<hamano@osstech.co.jp\>
-institute: LDAPCon 2015 Edinburgh
-date: November 2015
+date: LDAPCon 2015 Edinburgh November 2015
 abstract:
  This paper introduces WiredTiger backend for OpenLDAP.
  WiredTiger is an embedded database having characteristics of multi-core scalability and lock-free algorithms.
@@ -14,7 +13,7 @@ abstract:
 # Motivation
 BerkeleyDB is a legacy embedded database.
 The write performance of back-bdb (OpenLDAP backend using BerkeleyDB) is painfully slow and not scalable.
-If we use asynchronous mode in order to improve the write performance, data durability will be sacrificed.
+If we flush disk asynchronously in order to improve the write performance, data durability will be sacrificed.
 Although OpenLDAP is a multi-threaded application, the existing backends don't scale well with number of CPUs.
 The WiredTiger backend will bring about highly concurrent write performance.
 
@@ -27,8 +26,8 @@ If we choose the hierarchical structure, modrdn is fast but lookup and sub scope
 ![Plain structure vs Hierarchical structure](figure/plain_vs_hierarchical.eps)
 
 We followed basically plain data structure but we made some enhancements to the data structure for performance and database footprint.
-Before adding an entry, we reversed the DN per RDN and then added the `Reverse DN` as the key into WiredTiger's B-Tree table.
-At this point, entries are sorted by `Reverse DN`, so we can search rapidly with a sub scope using WiredTiger's range search.
+Before adding an entry, we reversed the DN per RDN and then added the *Reverse DN* as the key into WiredTiger's B-Tree table.
+At this point, entries are sorted by *Reverse DN*, so we can search rapidly with a sub scope using WiredTiger's range search.
 The range search method is low cost that only needs `WT_CURSOR::search_near()` and increment cursor operations for this purpose.
 
 ![Making Reverse DN](figure/reverse_dn.eps)
@@ -78,6 +77,7 @@ wtconfig transaction_sync=(enabled=true)
 
 # Benchmarking
 We have measured benchmarks that focus on concurrency performance by new benchmarking tool that called lb.[^lb]
+This benchmark tool can generate many concurrency load by *goroutines* of Go.
 See our wiki page for detail of benchmarks.[^benchmark_result]
 
 ## Enviroments
@@ -90,20 +90,22 @@ We have executed benchmarks on following environments:
 - 60G Memory
 - OpenLDAP of git master at Sep 2015 and applied some back-wt patches.
 - No checkpoint was performed during the benchmarking.
+- We measured two methods for ADD benchmarking, the first flushes disk transaction log each request and the second doesn't flush disk transaction log each request.
 
 ## Results
 
-![LDAP ADD Throughput (sync transaction log)](benchmark/add_sync.eps)
+![LDAP ADD Rate (sync txn log)](benchmark/add_sync.eps)
 
-![LDAP ADD Throughput (no sync transaction log)](benchmark/add_nosync.eps)
+![LDAP ADD Rate (nosync txn log)](benchmark/add_nosync.eps)
 
-![LDAP BIND Throughput](benchmark/bind.eps)
+![LDAP BIND Rate](benchmark/bind.eps)
 
-![LDAP SEARCH Throughput](benchmark/search.eps)
+![LDAP SEARCH Rate](benchmark/search.eps)
 
 [^lb]: <https://github.com/hamano/lb>
 [^benchmark_result]: <https://github.com/osstech-jp/openldap/wiki/back_wt-benchmark>
 
 ## Analysis
  * We have only used 24 logical CPUs. We may get more scalability on more CPUs.
- * The read performance is same level. However, it is necessary to consider that we did not implement entry cache for back-wt.
+ * The reading performances are much the same.
+ * The concurrency writing performances of back-wt are pretty good.
