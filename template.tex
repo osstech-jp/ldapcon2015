@@ -1,6 +1,6 @@
 \documentclass[a4paper$if(twocolumn)$,twocolumn$else$,onecolumn$endif$$if(fontsize)$,$fontsize$$endif$]{article}
 
-\usepackage{txfonts}
+\usepackage{newtxtext}
 \usepackage[dvipdfm]{hyperref}
 \hypersetup{
   setpagesize=false,
@@ -11,7 +11,7 @@
 \hypersetup{
   pdfstartview={FitV},
   pdftitle={$title$},
-  pdfauthor={$organization$ $author$},
+  pdfauthor={$author$},
   pdfsubject={$subject$},
   pdfkeywords={$keywords$},
 }
@@ -27,9 +27,32 @@
 \chead{}
 \rhead{}
 
-% fix for pandoc 1.14
-\providecommand{\tightlist}{%
-      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\definecolor{gainsboro}{HTML}{DCDCDC}
+\usepackage{listings}
+
+\lstset{
+  frame=single,
+  rulecolor=\color{gray},
+  backgroundcolor=\color{gainsboro},
+%  framesep=0pt,
+%  xleftmargin=0pt,
+  basicstyle=\fontsize{10pt}{1.2em}\tt,
+%  belowskip=-0.5em,
+%  belowskip=-1em,
+  identifierstyle=\color{black},
+  commentstyle=\color{brown},
+  keywordstyle=\color{olivegreen},
+  ndkeywordstyle=\color{red},
+  stringstyle=\color{purple},
+  showstringspaces=false,
+  breaklines=true,
+  captionpos=b,
+  columns=[l]{fullflexible}
+}
+
+% fix for pandoc 1.14 or later
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 % title
 \title{$title$}
@@ -39,15 +62,16 @@
 \makeatletter
 \def\@maketitle{
   \newpage
+  \vspace{-1in}
   \begin{flushright}
-    {\includegraphics[height=96pt]{logo.eps} \par}
+    \includegraphics[height=1in]{osstech_logo.eps}
   \end{flushright}
   \begin{center}
-    {\huge \@title \par}
-    \bigskip
-    {\large $organization$ \par}
+    {\huge \@title \par \bigskip}
+    {\large $institute$ \par}
     {\large \@author \par}
-    {\large $institute$ \@date \par}
+    {\large \@date \par}
+
   \end{center}
   \vspace{0.5in}
 }
@@ -56,7 +80,6 @@
 % document
 \begin{document}
 \maketitle
-
+\abstract{$abstract$}
 $body$
-
 \end{document}
