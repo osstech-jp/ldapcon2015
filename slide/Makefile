@@ -1,0 +1,27 @@
+LATEX=uplatex
+LATEX_OPT=-shell-escape
+PANDOC=pandoc
+PANDOC_OPT=-t beamer -V fontsize:14pt
+#DVIPDFMX_OPT=-f ptex-hiragino
+
+NAME=hamano-slide
+SRC=$(NAME).md
+TEX=$(NAME).tex
+DVI=$(NAME).dvi
+PDF=$(NAME).pdf
+TEMPLATE=osstech_beamer.tex
+
+all: $(PDF) hamano-slide.pdf hamano-bio.pdf
+
+$(TEX): $(SRC) osstech_beamer.tex
+	$(PANDOC) $(PANDOC_OPT) --template=$(TEMPLATE) -o $@ $<
+
+$(DVI): $(TEX)
+	$(LATEX) $(LATEX_OPT) $^
+
+$(PDF): $(DVI)
+	dvipdfmx $(DVIPDFMX_OPT) -o $@ $^
+
+clean:
+	rm -rf *.log *.aux *.out *.toc *.nav *.snm $(TEX) $(DVI) $(PDF)
+

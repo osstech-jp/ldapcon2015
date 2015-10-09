@@ -1,0 +1,124 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\ProvidesPackageRCS $Header: /Users/joseph/Documents/LaTeX/beamer/base/themes/theme/beamerthemeSzeged.sty,v d02a7cf4d8ae 2010/06/17 09:11:41 rivanvx $
+
+\DeclareOptionBeamer{compress}{\beamer@compresstrue}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+%\useoutertheme[footline=institutetitle]{miniframes}
+%\useoutertheme[footline=authorinstitutetitle]{miniframes}
+%\useoutertheme[footline=institutetitle]{miniframes}
+
+\definecolor{darkred}{rgb}{0.8,0,0}
+%\definecolor{darkblue}{RGB}{00,67,140}
+\definecolor{darkblue}{HTML}{00438c}
+\setbeamercolor{separation line}{use=structure,bg=structure.fg!50!bg}
+
+%\setbeamercolor{author in head/foot}{fg=white}
+%\setbeamercolor{title in head/foot}{fg=white}
+
+\setbeamercolor{section in toc}{fg=black,bg=white}
+%\setbeamercolor{alerted text}{fg=darkblue!80!gray}
+\setbeamercolor*{palette primary}{fg=darkblue,bg=white!30!white}
+\setbeamercolor*{palette secondary}{fg=darkblue,bg=gray!15!white}
+\setbeamercolor*{palette tertiary}{bg=darkblue,fg=gray!10!white}
+\setbeamercolor*{palette quaternary}{fg=darkblue,bg=gray!5!white}
+
+\setbeamercolor*{titlelike}{parent=palette primary}
+\setbeamercolor{titlelike}{parent=palette primary,fg=darkblue}
+\setbeamercolor{frametitle}{bg=white!10!white}
+\setbeamercolor{frametitle right}{bg=white!60!white}
+
+\setbeamercolor*{separation line}{parent=section in head/foot}
+\setbeamercolor*{separation margin}{parent=frametitle}
+%\setbeamercolor{fine separation line}{fg=darkblue}
+
+\setbeamercolor{head}{parent=frametitle}
+\setbeamercolor{foot}{parent=section in head/foot}
+
+\setbeamercolor{separation}{parent=section in head/foot}
+
+\setbeamercolor{item}{fg=darkblue}
+\setbeamercolor{navigation symbols dimmed}{fg=white}
+
+\setbeamerfont{text in head}{size=\fontsize{14pt}{0pt}}
+\setbeamerfont{text in foot}{size=\fontsize{11pt}{0pt}}
+%\setbeamerfont{title in head/foot}{parent=text in head/foot}
+%\setbeamerfont{author in head/foot}{parent=text in head/foot}
+%\setbeamerfont{institute in head/foot}{parent=text in head/foot}
+
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{title}{size=\large,series=\bfseries}
+\setbeamerfont{small}{size=\small}
+
+% define beamertemplate
+\defbeamertemplate{title page}{osstech}{
+  \AddToShipoutPicture*{
+    \put(20,30){
+      \includegraphics[height=3cm]{../figure/osstech_logo.eps}
+    }
+  }
+  \vspace{2em}
+  {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
+  \vspace{6em}
+  
+  \begin{flushright}
+    \usebeamerfont{small}{
+      \insertinstitute\par
+      \insertauthor\par
+      \insertdate\par
+    }
+  \end{flushright}
+}
+
+\defbeamertemplate{headline}{osstech}{
+  \ifnum\c@framenumber=1
+  % title page
+  \else
+  \begin{beamercolorbox}[colsep=1pt]{separation line}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[ht=13pt,dp=4pt,
+      leftskip=.2cm,rightskip=.2cm plus1fil]{head}
+    \leavevmode{
+      \usebeamerfont{text in head}
+      \usebeamercolor[fg]{text in head}
+      \insertshorttitle
+    }
+    \hfill
+    \raisebox{-3.5pt}{
+      \hbox{
+        \includegraphics[height=16pt,keepaspectratio]{../figure/osstech_logo.eps}
+      }
+    }
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[colsep=1pt]{separation line}
+  \end{beamercolorbox}
+  \fi
+}
+
+\defbeamertemplate*{footline}{osstech}{
+  \begin{beamercolorbox}[colsep=0.5pt]{separation line}
+  \end{beamercolorbox}
+  \vskip 1pt
+  \begin{beamercolorbox}[ht=10pt,dp=4pt,leftskip=.3cm,rightskip=.3cm plus1fil]{foot}
+    \leavevmode
+        {\usebeamerfont{text in foot}\insertshortinstitute}
+        {\hfill}
+        {\usebeamerfont{text in foot}\insertpagenumber}
+  \end{beamercolorbox}
+}
+
+\mode
+<all>
+
+% define style
+\useinnertheme{circles}
