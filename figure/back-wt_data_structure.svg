@@ -171,7 +171,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="185.68854"
+     inkscape:cx="186.19362"
      inkscape:cy="75.809653"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -180,8 +180,8 @@
      showguides="true"
      inkscape:window-width="2093"
      inkscape:window-height="1476"
-     inkscape:window-x="183"
-     inkscape:window-y="36"
+     inkscape:window-x="181"
+     inkscape:window-y="34"
      inkscape:window-maximized="0"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -353,15 +353,15 @@
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
-       x="127.55907"
+       x="121.55907"
        y="584.13281"
        id="text3017-0-7-7-1-2-8-1"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3019-4-9-2-1-4-5-0"
-         x="127.55907"
+         x="121.55907"
          y="584.13281"
-         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">Reverse DN(sorted)</tspan></text>
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">Reverse DN (sorted)</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 53.149606,588.18896 276.377964,0 0,0"
