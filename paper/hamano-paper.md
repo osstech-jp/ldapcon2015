@@ -23,16 +23,16 @@ If we choose the plain structure, sub scope searching is fast but modrdn and add
 The plain structure need many `@` prefix entries for sub scope searching, and also `%` prefix entries are needed for one scope searching.
 If we choose the hierarchical structure, modrdn is fast but lookup and sub scope search need extra cost.
 
-![Plain structure vs Hierarchical structure](figure/plain_vs_hierarchical.eps)
+![Plain structure vs Hierarchical structure](../figure/plain_vs_hierarchical.eps)
 
 We followed basically plain data structure but we made some enhancements to the data structure for performance and database footprint.
 Before adding an entry, we reversed the DN per RDN and then added the *Reverse DN* as the key into WiredTiger's B-Tree table.
 At this point, entries are sorted by *Reverse DN*, so we can search rapidly with a sub scope using WiredTiger's range search.
 The range search method is efficient that only needs `WT_CURSOR::search_near()` and increment cursor operations for this purpose.
 
-![Making Reverse DN](figure/reverse_dn.eps)
+![Making Reverse DN](../figure/reverse_dn.eps)
 
-![back-wt data structure](figure/back-wt_data_structure.eps)
+![back-wt data structure](../figure/back-wt_data_structure.eps)
 
 # Data Durability
 WiredTiger has several durability levels of transaction.
@@ -94,13 +94,13 @@ We have executed benchmarks on following environments:
 
 ## Results
 
-![LDAP ADD Rate (sync txn log)](benchmark/add_sync.eps)
+![LDAP ADD Rate (sync txn log)](../benchmark/add_sync.eps)
 
-![LDAP ADD Rate (nosync txn log)](benchmark/add_nosync.eps)
+![LDAP ADD Rate (nosync txn log)](../benchmark/add_nosync.eps)
 
-![LDAP BIND Rate](benchmark/bind.eps)
+![LDAP BIND Rate](../benchmark/bind.eps)
 
-![LDAP SEARCH Rate](benchmark/search.eps)
+![LDAP SEARCH Rate](../benchmark/search.eps)
 
 [^lb]: <https://github.com/hamano/lb>
 [^benchmark_result]: <https://github.com/osstech-jp/openldap/wiki/back_wt-benchmark>
