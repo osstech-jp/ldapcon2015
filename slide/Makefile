@@ -13,7 +13,7 @@ TEMPLATE=osstech_beamer.tex
 
 all: $(PDF)
 
-$(TEX): $(SRC) osstech_beamer.tex
+$(TEX): $(SRC) $(TEMPLATE)
 	$(PANDOC) $(PANDOC_OPT) --template=$(TEMPLATE) -o $@ $<
 
 $(DVI): $(TEX)

@@ -13,11 +13,7 @@ theme: osstech
 - High performance
 - High scalable
 
-\AddToShipoutPicture*{
-  \put(54,0){
-    \includegraphics[height=8cm]{images/tiger1.jpg}
-  }
-}
+\bg[images/tiger1.jpg]
 
 # New Benchmark Tool - lb
 
@@ -25,11 +21,7 @@ theme: osstech
 - Apache Bench like inteface
 - Written by golang
 
-\AddToShipoutPicture*{
-  \put(-4,16){
-      \includegraphics[width=\paperwidth]{images/gopher.pdf}
-  }
-}
+\bg[images/gopher.pdf]
 
 # lb
 

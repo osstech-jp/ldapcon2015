@@ -36,8 +36,7 @@
 \setbeamercolor*{titlelike}{parent=palette primary}
 \setbeamercolor{titlelike}{parent=palette primary,fg=darkblue}
 \setbeamercolor{frametitle}{bg=}
-%\setbeamercolor{frametitle}{bg=white!10!white}
-%\setbeamercolor{frametitle right}{bg=white!60!white}
+\setbeamercolor{frametitle right}{bg=}
 
 \setbeamercolor*{separation line}{parent=section in head/foot}
 \setbeamercolor*{separation margin}{parent=frametitle}
@@ -97,7 +96,7 @@
     \hfill
     \raisebox{-3.5pt}{
       \hbox{
-        \includegraphics[height=16pt,keepaspectratio]{../figure/osstech_logo.eps}
+        \includegraphics[height=16pt,keepaspectratio]{../figure/osstech_header.eps}
       }
     }
   \end{beamercolorbox}
@@ -123,3 +122,11 @@
 
 % define style
 \useinnertheme{circles}
+
+\newcommand{\bg}[1][]{
+  \AddToShipoutPicture*{
+    \put(-4,16){
+      \includegraphics[width=\paperwidth]{#1}
+    }
+  }
+}
