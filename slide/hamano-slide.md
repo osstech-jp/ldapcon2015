@@ -19,6 +19,24 @@ theme: osstech
   }
 }
 
+# New Benchmark Tool - lb
+
+- slamd is dead
+- Apache Bench like inteface
+- Written by golang
+
+\AddToShipoutPicture*{
+  \put(-4,16){
+      \includegraphics[width=\paperwidth]{images/gopher.pdf}
+  }
+}
+
+# lb
+
+- $ go get github.com/hamano/lb
+- $ lb -c Concurrency -n Request Number
+  Apache Bench like interface
+
 # Questions?
 
 \AddToShipoutPicture*{
