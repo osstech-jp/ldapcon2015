@@ -11,7 +11,7 @@ DVI=$(NAME).dvi
 PDF=$(NAME).pdf
 TEMPLATE=osstech_beamer.tex
 
-all: $(PDF) hamano-slide.pdf hamano-bio.pdf
+all: $(PDF)
 
 $(TEX): $(SRC) osstech_beamer.tex
 	$(PANDOC) $(PANDOC_OPT) --template=$(TEMPLATE) -o $@ $<

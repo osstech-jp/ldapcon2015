@@ -13,3 +13,16 @@ theme: osstech
 - High performance
 - High scalable
 
+\AddToShipoutPicture*{
+  \put(54,0){
+    \includegraphics[height=8cm]{images/tiger1.jpg}
+  }
+}
+
+# Questions?
+
+\AddToShipoutPicture*{
+  \put(108,17){
+    \includegraphics[width=9cm]{images/tiger2.jpg}
+  }
+}
