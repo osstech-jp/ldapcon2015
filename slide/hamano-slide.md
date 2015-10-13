@@ -13,7 +13,7 @@ theme: osstech
 - High performance
 - High scalable
 
-\bg[images/tiger1.jpg]
+\bg{images/tiger1.jpg}
 
 # Durability Level
 
@@ -27,7 +27,7 @@ theme: osstech
 - Apache Bench like inteface
 - Written by golang
 
-\bg[images/gopher.pdf]
+\bg{images/gopher.pdf}
 
 # lb
 
@@ -36,16 +36,17 @@ theme: osstech
   Apache Bench like interface
 
 # ADD (sync) Benchmarking
-\includegraphics[width=0.8\paperwidth]{../benchmark/add_sync.eps}
+
+\fg{../benchmark/add_sync.eps}
 
 # ADD (nosync) Benchmarking
-\includegraphics[width=0.8\paperwidth]{../benchmark/add_nosync.eps}
+\fg{../benchmark/add_nosync.eps}
 
 # BIND Benchmarking
-\includegraphics[width=0.8\paperwidth]{../benchmark/bind.eps}
+\fg{../benchmark/bind.eps}
 
 # SEARCH Benchmarking
-\includegraphics[width=0.8\paperwidth]{../benchmark/search.eps}
+\fg{../benchmark/search.eps}
 
 # Tests
 
@@ -60,8 +61,5 @@ $ make -C tests wt
 
 # Questions?
 
-\AddToShipoutPicture*{
-  \put(108,17){
-    \includegraphics[width=9cm]{images/tiger2.jpg}
-  }
-}
+\bg{images/tiger2.jpg}
+

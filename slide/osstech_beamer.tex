@@ -141,7 +141,18 @@ $if(institute)$
 $endif$
 \date{$date$}
 
-\def\organization{$organization$}
+\newcommand{\bg}[1]{
+  \AddToShipoutPicture*{
+    \put(-4,16){
+      \includegraphics[width=\paperwidth]{#1}
+    }
+  }
+}
+
+\newcommand{\fg}[1]{
+  \includegraphics[width=0.8\paperwidth]{#1}
+}
+
 
 %\setbeamertemplate{headline}[osstech]
 \usepackage{eso-pic}
