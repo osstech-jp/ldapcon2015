@@ -29,6 +29,29 @@ theme: osstech
 - $ lb -c Concurrency -n Request Number
   Apache Bench like interface
 
+# ADD (sync) Benchmarking
+\includegraphics[width=0.8\paperwidth]{../benchmark/add_sync.eps}
+
+# ADD (nosync) Benchmarking
+\includegraphics[width=0.8\paperwidth]{../benchmark/add_nosync.eps}
+
+# BIND Benchmarking
+\includegraphics[width=0.8\paperwidth]{../benchmark/bind.eps}
+
+# SEARCH Benchmarking
+\includegraphics[width=0.8\paperwidth]{../benchmark/search.eps}
+
+# Tests
+
+$ make -C tests wt
+
+54/65
+
+# Tasks
+
+- Hot-backup
+- alias and glue entry
+
 # Questions?
 
 \AddToShipoutPicture*{
