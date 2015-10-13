@@ -15,6 +15,12 @@ theme: osstech
 
 \bg[images/tiger1.jpg]
 
+# Durability Level
+
+- in-memory txn log -- fastest but no durability
+- write txn log file, no sync
+- write txn log file, sync per every commit
+
 # New Benchmark Tool - lb
 
 - slamd is dead
