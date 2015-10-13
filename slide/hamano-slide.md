@@ -45,7 +45,7 @@ theme: osstech
 
 $ make -C tests wt
 
-54/65
+\Huge{54/65}
 
 # Tasks
 
