@@ -32,7 +32,7 @@ theme: osstech
 # lb
 
 - $ go get github.com/hamano/lb
-- $ lb -c Concurrency -n Request Number
+- $ lb -c concurrency -n requests
   Apache Bench like interface
 
 # ADD (sync) Benchmarking
@@ -61,5 +61,5 @@ $ make -C tests wt
 
 # Questions?
 
-\bg{images/tiger2.jpg}
+\bg{images/tiger2.pdf}
 

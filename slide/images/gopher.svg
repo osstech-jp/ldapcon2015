@@ -14,7 +14,7 @@
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="新規ドキュメント 2"
+   sodipodi:docname="gopher.svg"
    version="1.0">
   <defs
      id="defs4" />
@@ -25,15 +25,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.54463592"
-     inkscape:cx="212.26024"
-     inkscape:cy="104.07294"
+     inkscape:zoom="2.1785437"
+     inkscape:cx="248.29927"
+     inkscape:cy="129.33878"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
-     inkscape:window-width="988"
-     inkscape:window-height="724"
-     inkscape:window-x="460"
-     inkscape:window-y="35"
+     inkscape:window-width="1885"
+     inkscape:window-height="1222"
+     inkscape:window-x="458"
+     inkscape:window-y="33"
      width="12.8cm"
      height="9.6cm"
      units="cm"
@@ -87,7 +87,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -98,7 +98,7 @@
      transform="translate(4.149475e-6,-698.0315)">
     <g
        id="g12"
-       transform="matrix(0.125,0,0,-0.125,276.57388,1014.1197)">
+       transform="matrix(0.1,0,0,-0.1,303.95423,1013.9296)">
       <path
          inkscape:connector-curvature="0"
          d="m 25.1602,793.25 c 2.4609,-50.391 52.8086,-27.07 75.6208,-11.328 21.641,15 27.969,2.539 29.879,32.066 1.219,19.422 3.481,38.793 2.391,58.293 -32.742,2.957 -68.3596,-4.812 -95.1994,-24.34 C 24.0195,837.898 -1.87891,805.828 25.1602,793.25"
