@@ -15,6 +15,31 @@ theme: osstech
 
 \bg{images/tiger1.jpg}
 
+# Lock Free
+
+# bdb_next_id()
+~~~
+int bdb_next_id( BackendDB *be, ID *out )
+{
+    struct bdb_info *bdb = (struct bdb_info *) be->be_private;
+
+    ldap_pvt_thread_mutex_lock( &bdb->bi_lastid_mutex );
+    *out = ++bdb->bi_lastid;
+    ldap_pvt_thread_mutex_unlock( &bdb->bi_lastid_mutex );
+    return 0;
+}
+~~~
+
+# wt_next_id()
+
+~~~
+int wt_next_id(BackendDB *be, ID *out){
+    struct wt_info *wi = (struct wt_info *) be->be_private;
+    *out = __sync_add_and_fetch(&wi->wi_lastid, 1);
+    return 0;
+}
+~~~
+
 # Durability Level
 
 - in-memory txn log -- fastest but no durability

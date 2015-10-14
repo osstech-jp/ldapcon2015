@@ -45,6 +45,27 @@ $endfor$
 $endif$
 $if(listings)$
 \usepackage{listings}
+
+\lstset{
+  frame=single,
+  rulecolor=\color{gray},
+%  backgroundcolor=\color{gainsboro},
+%  framesep=0pt,
+%  xleftmargin=0pt,
+  basicstyle=\fontsize{10pt}{1.2em}\tt,
+%  belowskip=-0.5em,
+%  belowskip=-1em,
+  identifierstyle=\color{black},
+  commentstyle=\color{brown},
+  keywordstyle=\color{olivegreen},
+  ndkeywordstyle=\color{red},
+  stringstyle=\color{purple},
+  showstringspaces=false,
+  breaklines=true,
+  captionpos=b,
+  columns=[l]{fullflexible}
+}
+
 $endif$
 $if(lhs)$
 \lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
