@@ -2,7 +2,7 @@ LATEX=uplatex
 LATEX_OPT=-shell-escape
 PANDOC=pandoc
 PANDOC_OPT=-t beamer --listings
-#DVIPDFMX_OPT=-f ptex-hiragino
+#DVIPDFMX_OPT=-f otf-up-hiragino
 
 NAME=hamano-slide
 SRC=$(NAME).md
@@ -23,5 +23,5 @@ $(PDF): $(DVI)
 	dvipdfmx $(DVIPDFMX_OPT) -o $@ $^
 
 clean:
-	rm -rf *.log *.aux *.out *.toc *.nav *.snm $(TEX) $(DVI) $(PDF)
+	rm -rf *.log *.aux *.out *.toc *.nav *.snm *.vrb $(TEX) $(DVI) $(PDF)
 
