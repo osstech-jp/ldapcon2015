@@ -1,7 +1,7 @@
 LATEX=uplatex
 LATEX_OPT=-shell-escape
 PANDOC=pandoc
-PANDOC_OPT=-t beamer -V fontsize:14pt --listings
+PANDOC_OPT=-t beamer --listings
 #DVIPDFMX_OPT=-f ptex-hiragino
 
 NAME=hamano-slide
