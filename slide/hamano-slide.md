@@ -61,5 +61,5 @@ $ make -C tests wt
 
 # Questions?
 
-\bg{images/tiger2.pdf}
+\bg{images/tiger2.jpg}
 
