@@ -5,7 +5,12 @@ author: Tsukasa Hamano \<hamano@osstech.co.jp\>
 date: LDAPCon 2015 Edinburgh November 2015
 theme: osstech
 ---
-# About me
+# About OSSTech
+
+- ID Management
+- Open Source Contribution
+
+\bg{images/osstech.jpg}
 
 # About WiredTiger
 
@@ -15,6 +20,10 @@ theme: osstech
 
 \bg{images/tiger1.jpg}
 
+# About back-wt
+
+\bg{images/openldap.jpg}
+
 # Lock Free
 
 # bdb_next_id()
@@ -22,7 +31,6 @@ theme: osstech
 int bdb_next_id( BackendDB *be, ID *out )
 {
     struct bdb_info *bdb = (struct bdb_info *) be->be_private;
-
     ldap_pvt_thread_mutex_lock( &bdb->bi_lastid_mutex );
     *out = ++bdb->bi_lastid;
     ldap_pvt_thread_mutex_unlock( &bdb->bi_lastid_mutex );
@@ -39,6 +47,10 @@ int wt_next_id(BackendDB *be, ID *out){
     return 0;
 }
 ~~~
+
+# fsync(2) is slow
+
+- Group commit
 
 # Durability Level
 
