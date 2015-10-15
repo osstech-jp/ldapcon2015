@@ -1,6 +1,9 @@
 \documentclass[a4paper$if(twocolumn)$,twocolumn$else$,onecolumn$endif$$if(fontsize)$,$fontsize$$endif$]{article}
 
-\usepackage{newtxtext}
+\renewcommand{\rmdefault}{ptm} % Nimbus Roman No9 L
+\renewcommand{\sfdefault}{phv} % Nimbus Sans L
+\renewcommand{\ttdefault}{zi4} % Inconsolata
+
 \usepackage[dvipdfm]{hyperref}
 \hypersetup{
   setpagesize=false,
