@@ -72,6 +72,12 @@ int wt_next_id(BackendDB *be, ID *out){
 - $ lb -c concurrency -n requests
   Apache Bench like interface
 
+# Benchmark Environment
+
+- 12 Core CPU
+- No RAID Card
+- SAS Disk
+
 # ADD (sync) Benchmarking
 
 \fg{../benchmark/add_sync.eps}
