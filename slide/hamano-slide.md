@@ -89,7 +89,8 @@ int wt_next_id(BackendDB *be, ID *out){
 
 $ make -C tests wt
 
-\Huge{54/65}
+\Huge{$\frac{54}{65}$}
+\Large{Succeed}
 
 # Tasks
 
