@@ -78,18 +78,18 @@ int wt_next_id(BackendDB *be, ID *out){
 - No RAID Card
 - SAS Disk
 
+# BIND Benchmarking
+\fg{../benchmark/bind.eps}
+
+# SEARCH Benchmarking
+\fg{../benchmark/search.eps}
+
 # ADD (sync) Benchmarking
 
 \fg{../benchmark/add_sync.eps}
 
 # ADD (nosync) Benchmarking
 \fg{../benchmark/add_nosync.eps}
-
-# BIND Benchmarking
-\fg{../benchmark/bind.eps}
-
-# SEARCH Benchmarking
-\fg{../benchmark/search.eps}
 
 # Tests
 
