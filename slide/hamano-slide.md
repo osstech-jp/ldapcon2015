@@ -8,6 +8,7 @@ theme: osstech
 # About OSSTech
 
 - ID Management
+- Storage Solution
 - Open Source Contribution
 
 \bg{images/osstech.jpg}
@@ -30,7 +31,7 @@ theme: osstech
 ~~~
 int bdb_next_id( BackendDB *be, ID *out )
 {
-    struct bdb_info *bdb = (struct bdb_info *) be->be_private;
+    struct bdb_info *bdb = (struct bdb_info *)be->be_private;
     ldap_pvt_thread_mutex_lock( &bdb->bi_lastid_mutex );
     *out = ++bdb->bi_lastid;
     ldap_pvt_thread_mutex_unlock( &bdb->bi_lastid_mutex );
@@ -60,17 +61,21 @@ int wt_next_id(BackendDB *be, ID *out){
 
 # New Benchmark Tool - lb
 
-- slamd is dead
-- Apache Bench like inteface
-- Written by golang
+- SLAMD is dead
+- Command line interface
+- Written by Go
 
 \bg{images/gopher.pdf}
 
-# lb
+# Installation of lb
 
-- $ go get github.com/hamano/lb
-- $ lb -c concurrency -n requests
-  Apache Bench like interface
+$ export GOPATH=\textasciitilde/go
+
+$ go get github.com/hamano/lb
+
+# Usage of lb
+
+$ lb -c concurrency -n requests
 
 # Benchmark Environment
 
@@ -78,11 +83,39 @@ int wt_next_id(BackendDB *be, ID *out){
 - No RAID Card
 - SAS Disk
 
-# BIND Benchmarking
+# BIND Benchmark Script
+
+~~~
+for c in 1 2 4 8 16 32 64 128 256 512; do
+  lb bind -c $c -n 100000 \
+    -D "cn=user%d,dc=example,dc=com" -w secret
+    --last 10000 $URL
+done
+~~~
+
+# BIND Benchmark Result
 \fg{../benchmark/bind.eps}
 
-# SEARCH Benchmarking
+# SEARCH Benchmark Script
+
+~~~
+for c in 1 2 4 8 16 32 64 128 256 512; do
+  lb search -c $c -n 100000 \
+    -a "(cn=user%d)" \
+    --last 10000 $URL
+done
+~~~
+
+# SEARCH Benchmark Result
 \fg{../benchmark/search.eps}
+
+# Add Benchmark Script
+
+~~~
+for c in 1 2 4 8 16 32 64 128 256 512; do
+    lb add -c $c -n 10000 --uuid $URL
+done
+~~~
 
 # ADD (sync) Benchmarking
 
