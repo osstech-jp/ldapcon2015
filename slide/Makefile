@@ -10,10 +10,11 @@ TEX=$(NAME).tex
 DVI=$(NAME).dvi
 PDF=$(NAME).pdf
 TEMPLATE=osstech_beamer.tex
+BEAMERTHEME=beamerthemeosstech.sty
 
 all: $(PDF)
 
-$(TEX): $(SRC) $(TEMPLATE)
+$(TEX): $(SRC) $(TEMPLATE) $(BEAMERTHEME)
 	$(PANDOC) $(PANDOC_OPT) --template=$(TEMPLATE) -o $@ $<
 
 $(DVI): $(TEX)
