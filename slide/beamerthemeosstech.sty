@@ -1,6 +1,11 @@
 \DeclareOptionBeamer{compress}{\beamer@compresstrue}
 \ProcessOptionsBeamer
 
+\setlength{\leftmargini}{1em}
+
+% define style
+\useinnertheme{circles}
+
 \mode<presentation>
 
 \definecolor{darkred}{rgb}{0.8,0,0}
@@ -46,7 +51,7 @@
   }
   \vspace{2em}
   {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
-  \vspace{3em}
+  \vspace{2em}
   \begin{flushright}
     \usebeamerfont{small}{
       \insertinstitute\par
@@ -97,5 +102,3 @@
 \mode
 <all>
 
-% define style
-\useinnertheme{circles}
