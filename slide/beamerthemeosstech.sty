@@ -4,17 +4,18 @@
 \mode<presentation>
 
 \definecolor{darkred}{rgb}{0.8,0,0}
-\definecolor{darkblue}{HTML}{00438c}
-\setbeamercolor{separation line}{use=structure,bg=structure.fg!50!bg}
+\definecolor{darkblue}{HTML}{00438C}
+\definecolor{samuraiblue}{HTML}{1D327D}
 
+\setbeamercolor{separation line}{use=structure,bg=structure.fg!50!bg}
 \setbeamercolor{section in toc}{fg=black,bg=white}
-\setbeamercolor*{palette primary}{fg=darkblue,bg=white!30!white}
-\setbeamercolor*{palette secondary}{fg=darkblue,bg=gray!15!white}
-\setbeamercolor*{palette tertiary}{bg=darkblue,fg=gray!10!white}
-\setbeamercolor*{palette quaternary}{fg=darkblue,bg=gray!5!white}
+\setbeamercolor*{palette primary}{fg=samuraiblue,bg=white!30!white}
+\setbeamercolor*{palette secondary}{fg=samuraiblue,bg=gray!15!white}
+\setbeamercolor*{palette tertiary}{bg=samuraiblue,fg=gray!10!white}
+\setbeamercolor*{palette quaternary}{fg=samuraiblue,bg=gray!5!white}
 
 \setbeamercolor*{titlelike}{parent=palette primary}
-\setbeamercolor{titlelike}{parent=palette primary,fg=darkblue}
+\setbeamercolor{titlelike}{parent=palette primary,fg=samuraiblue}
 \setbeamercolor{frametitle}{bg=}
 \setbeamercolor{frametitle right}{bg=}
 
@@ -26,15 +27,15 @@
 
 \setbeamercolor{separation}{parent=section in head/foot}
 
-\setbeamercolor{item}{fg=darkblue}
+\setbeamercolor{item}{fg=samuraiblue}
 \setbeamercolor{navigation symbols dimmed}{fg=white}
 
 \setbeamerfont{text in head}{size=\fontsize{14pt}{0pt}}
 \setbeamerfont{text in foot}{size=\fontsize{11pt}{0pt}}
 
 \setbeamerfont{frametitle}{size=\Large,series=\bfseries}
-\setbeamerfont{title}{size=\large,series=\bfseries}
-\setbeamerfont{small}{size=\small}
+\setbeamerfont{title}{size=\Large,series=\bfseries}
+\setbeamerfont{small}{size=\fontsize{12pt}{0pt}}
 
 % define beamertemplate
 \defbeamertemplate{title page}{osstech}{
@@ -45,7 +46,7 @@
   }
   \vspace{2em}
   {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
-  \vspace{6em}
+  \vspace{3em}
   \begin{flushright}
     \usebeamerfont{small}{
       \insertinstitute\par
