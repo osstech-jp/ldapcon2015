@@ -7,11 +7,17 @@ theme: osstech
 ---
 # About OSSTech
 
-- ID Management
+\vskip -2em
+
+- ID Management market dominant in Japan.
 - Storage Solution
 - Open Source Contribution
 
-\bg{images/osstech.jpg}
+\bg{images/tokyo.pdf}
+
+# About back-wt
+
+\bg{images/openldap.jpg}
 
 # About WiredTiger
 
@@ -21,21 +27,18 @@ theme: osstech
 
 \bg{images/tiger1.jpg}
 
-# About back-wt
-
-\bg{images/openldap.jpg}
-
 # Lock Free
+\bg{images/padlock.jpg}
 
 # bdb_next_id()
 ~~~
 int bdb_next_id( BackendDB *be, ID *out )
 {
-    struct bdb_info *bdb = (struct bdb_info *)be->be_private;
-    ldap_pvt_thread_mutex_lock( &bdb->bi_lastid_mutex );
-    *out = ++bdb->bi_lastid;
-    ldap_pvt_thread_mutex_unlock( &bdb->bi_lastid_mutex );
-    return 0;
+  struct bdb_info *bdb=(struct bdb_info*)be->be_private;
+  ldap_pvt_thread_mutex_lock(&bdb->bi_lastid_mutex);
+  *out = ++bdb->bi_lastid;
+  ldap_pvt_thread_mutex_unlock(&bdb->bi_lastid_mutex);
+  return 0;
 }
 ~~~
 
@@ -43,13 +46,14 @@ int bdb_next_id( BackendDB *be, ID *out )
 
 ~~~
 int wt_next_id(BackendDB *be, ID *out){
-    struct wt_info *wi = (struct wt_info *) be->be_private;
-    *out = __sync_add_and_fetch(&wi->wi_lastid, 1);
-    return 0;
+  struct wt_info *wi = (struct wt_info *)be->be_private;
+  *out = __sync_add_and_fetch(&wi->wi_lastid, 1);
+  return 0;
 }
 ~~~
 
 # fsync(2) is slow
+\bg{images/harddisk.jpg}
 
 - Group commit
 
@@ -60,18 +64,19 @@ int wt_next_id(BackendDB *be, ID *out){
 - write txn log file, sync per every commit
 
 # New Benchmark Tool - lb
+\bg{images/slamd.pdf}
 
 - SLAMD is dead
 - Command line interface
 - Written by Go
 
-\bg{images/gopher.pdf}
-
 # Installation of lb
+\bg{images/gopher.pdf}
 
 $ export GOPATH=\textasciitilde/go
 
 $ go get github.com/hamano/lb
+
 
 # Usage of lb
 
@@ -88,8 +93,8 @@ $ lb -c concurrency -n requests
 ~~~
 for c in 1 2 4 8 16 32 64 128 256 512; do
   lb bind -c $c -n 100000 \
-    -D "cn=user%d,dc=example,dc=com" -w secret
-    --last 10000 $URL
+    -D "cn=user%d,dc=example,dc=com" -w secret \
+    --last 10000 ldap://targethost/
 done
 ~~~
 
@@ -102,27 +107,26 @@ done
 for c in 1 2 4 8 16 32 64 128 256 512; do
   lb search -c $c -n 100000 \
     -a "(cn=user%d)" \
-    --last 10000 $URL
+    --last 10000 ldap://targethost/
 done
 ~~~
 
 # SEARCH Benchmark Result
 \fg{../benchmark/search.eps}
 
-# Add Benchmark Script
+# ADD Benchmark Script
 
 ~~~
 for c in 1 2 4 8 16 32 64 128 256 512; do
-    lb add -c $c -n 10000 --uuid $URL
+    lb add -c $c -n 10000 --uuid ldap://targethost/
 done
 ~~~
 
-# ADD (sync) Benchmarking
-
-\fg{../benchmark/add_sync.eps}
-
-# ADD (nosync) Benchmarking
+# ADD (nosync) Benchmarks
 \fg{../benchmark/add_nosync.eps}
+
+# ADD (sync) Benchmarks
+\fg{../benchmark/add_sync.eps}
 
 # Tests
 
