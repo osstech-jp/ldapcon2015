@@ -3,6 +3,7 @@ title: WiredTiger Backend for OpenLDAP
 institute: Open Source Solution Technology Corporation
 author: HAMANO Tsukasa \<hamano@osstech.co.jp\>
 date: LDAPCon 2015 Edinburgh November 2015
+keywords: OpenLDAP,WiredTiger,OSSTech,LDAPCon
 abstract:
  This paper introduces WiredTiger backend for OpenLDAP.
  WiredTiger is an embedded database having characteristics of multi-core scalability and lock-free algorithms.
