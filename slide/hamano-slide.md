@@ -9,7 +9,7 @@ theme: osstech
 
 \vskip -2em
 
-- ID Management market dominant in Japan.
+- ID Management leading company in Japan.
 - Storage Solution
 - Open Source Contribution
 
@@ -19,13 +19,19 @@ theme: osstech
 
 \bg{images/openldap.jpg}
 
+- New OpenLDAP Backend
+- WiredTiger Database
+
 # About WiredTiger
 
 - Embedded database
 - High performance
-- High scalable
+- High scalability
 
 \bg{images/tiger1.jpg}
+
+# Data Structure
+\bg{../figure/back-wt_data_structure.eps}
 
 # Lock Free
 \bg{images/padlock.jpg}
@@ -68,7 +74,7 @@ int wt_next_id(BackendDB *be, ID *out){
 
 - SLAMD is dead
 - Command line interface
-- Written by Go
+- Written in Go
 
 # Installation of lb
 \bg{images/gopher.pdf}
