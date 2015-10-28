@@ -15,7 +15,7 @@ theme: osstech
 
 \bg{images/tokyo.pdf}
 
-# About back-wt
+# What's back-wt
 
 \bg{images/openldap.jpg}
 
@@ -83,10 +83,6 @@ $ export GOPATH=\textasciitilde/go
 
 $ go get github.com/hamano/lb
 
-
-# Usage of lb
-
-$ lb -c concurrency -n requests
 
 # Benchmark Environment
 
