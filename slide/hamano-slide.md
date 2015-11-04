@@ -30,11 +30,16 @@ theme: osstech
 
 \bg{images/tiger1.jpg}
 
-# Data Structure
-\bg{../figure/back-wt_data_structure.eps}
-
 # Lock Free
 \bg{images/padlock.jpg}
+
+# fsync(2) is slow
+\bg{images/harddisk.jpg}
+
+- Group commit
+
+# Data Structure
+\bg{../figure/back-wt_data_structure.eps}
 
 # bdb_next_id()
 ~~~
@@ -57,11 +62,6 @@ int wt_next_id(BackendDB *be, ID *out){
   return 0;
 }
 ~~~
-
-# fsync(2) is slow
-\bg{images/harddisk.jpg}
-
-- Group commit
 
 # Durability Level
 
