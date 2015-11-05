@@ -33,6 +33,9 @@ theme: osstech
 # Lock Free
 \bg{images/padlock.jpg}
 
+- Hazard pointer
+- Optimistic concurrency control
+
 # fsync(2) is slow
 \bg{images/harddisk.jpg}
 
