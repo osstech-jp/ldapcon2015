@@ -79,7 +79,7 @@ wtconfig transaction_sync=(enabled=true)
 # Benchmarking
 We have measured benchmarks that focus on concurrency performance by new benchmarking tool that called lb.[^lb]
 This benchmark tool can generate many concurrency load by *goroutines* of Go.
-See our wiki page for detail of benchmarks.[^benchmark_result]
+See our wiki page for detail of benchmarks.[^wiki]
 
 ## Enviroments
 
@@ -104,7 +104,7 @@ We have executed benchmarks on following environments:
 ![LDAP SEARCH Rate](../benchmark/search.eps)
 
 [^lb]: <https://github.com/hamano/lb>
-[^benchmark_result]: <https://github.com/osstech-jp/openldap/wiki/back_wt-benchmark>
+[^wiki]: <https://github.com/osstech-jp/openldap/wiki/>
 
 ## Analysis
  * We have only used 24 logical CPUs. We may get more scalability on more CPUs.
