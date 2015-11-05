@@ -145,7 +145,7 @@ $ make -C tests wt
 - Hot-backup
 - alias and glue entry
 
-# Questions?
+# Thank You!
 
 \bg{images/tiger2.jpg}
 
