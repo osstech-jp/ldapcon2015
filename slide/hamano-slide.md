@@ -64,11 +64,11 @@ int wt_next_id(BackendDB *be, ID *out){
 # fsync(2) is slow
 \bg{images/harddisk.jpg}
 
-# Durability Level
+# Durability Levels
 
-- in-memory txn log -- fastest but no durability
-- write txn log file, no sync
-- write txn log file, sync per every commit
+1. in-memory txn log -- fastest but no durability
+2. write txn log file, no sync
+3. write txn log file, sync per every commit
 
 # New Benchmark Tool - lb
 \bg{images/slamd.pdf}
