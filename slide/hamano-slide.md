@@ -91,6 +91,20 @@ $ go get github.com/hamano/lb
 - No RAID Card
 - SAS Disk
 
+# ADD Benchmark Script
+
+~~~
+for c in 1 2 4 8 16 32 64 128 256 512; do
+    lb add -c $c -n 10000 --uuid ldap://targethost/
+done
+~~~
+
+# ADD (nosync) Benchmarks
+\fg{../benchmark/add_nosync.eps}
+
+# ADD (sync) Benchmarks
+\fg{../benchmark/add_sync.eps}
+
 # BIND Benchmark Script
 
 ~~~
@@ -116,20 +130,6 @@ done
 
 # SEARCH Benchmark Result
 \fg{../benchmark/search.eps}
-
-# ADD Benchmark Script
-
-~~~
-for c in 1 2 4 8 16 32 64 128 256 512; do
-    lb add -c $c -n 10000 --uuid ldap://targethost/
-done
-~~~
-
-# ADD (nosync) Benchmarks
-\fg{../benchmark/add_nosync.eps}
-
-# ADD (sync) Benchmarks
-\fg{../benchmark/add_sync.eps}
 
 # Tests
 
